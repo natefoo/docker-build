@@ -6,7 +6,7 @@ WHEEL_VERSION	:= REPLACE_WHEEL_VERSION
 PIP_VERSION	:= REPLACE_PIP_VERSION
 
 
-image-id: Dockerfile .dockerignore buildpy.sh
+image-id: Dockerfile .dockerignore buildpy.sh buildpyextras.sh
 	docker build -t $(TAG) .
 	docker images -q $(TAG) >$@
 
@@ -18,9 +18,12 @@ Dockerfile: ../$(DOCKERFILE)
 		-e 's#PKGS#$(PKGS)#' ../$(DOCKERFILE) >$@
 
 buildpy.sh: ../buildpy.sh.in
+	cp ../buildpy.sh.in $@
+
+buildpyextras.sh: ../buildpyextras.sh.in
 	sed -e 's#WHEEL_VERSION#$(WHEEL_VERSION)#' \
 		-e 's#PIP_VERSION#$(PIP_VERSION)#' \
-		../buildpy.sh.in >$@
+		../buildpyextras.sh.in >$@
 
 clean:
 	rm -f Dockerfile .dockerignore image-id buildpy.sh

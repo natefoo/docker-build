@@ -1,0 +1,19 @@
+#!/bin/bash
+
+abis="cp26m cp26mu cp27m cp27mu"
+arch=$(uname -m)
+
+( for url in $fetch; do
+    if [ ! -f `basename $url` ]; then
+        curl -LO $url && \
+        tar zxf $(basename $url) || exit 1
+    fi
+done ) && \
+
+for abi in $abis; do
+    /python/${abi}-${arch}/bin/easy_install https://bitbucket.org/natefoo/wheel/get/WHEEL_VERSION.tar.gz
+    /python/${abi}-${arch}/bin/easy_install https://github.com/natefoo/pip/archive/PIP_VERSION.tar.gz
+done
+
+easy_install https://bitbucket.org/natefoo/wheel/get/WHEEL_VERSION.tar.gz
+easy_install https://github.com/natefoo/starforge/archive/e808a1d153129e80da3a9108816bce6edcc4730e.tar.gz
