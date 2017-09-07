@@ -1,0 +1,40 @@
+--- ./contrib/ftpasswd.orig	2017-09-06 11:37:06.000000000 -0400
++++ ./contrib/ftpasswd	2017-09-06 11:37:20.000000000 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env perl
++#!/usr/bin/perl
+ # ---------------------------------------------------------------------------
+ # Copyright (C) 2000-2015 TJ Saunders <tj@castaglia.org>
+ #
+--- ./contrib/ftpmail.orig	2017-09-06 11:37:06.000000000 -0400
++++ ./contrib/ftpmail	2017-09-06 11:37:20.000000000 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env perl
++#!/usr/bin/perl
+ # ---------------------------------------------------------------------------
+ # Copyright (C) 2008-2017 TJ Saunders <tj@castaglia.org>
+ #
+--- ./contrib/ftpquota.orig	2017-09-06 11:37:06.000000000 -0400
++++ ./contrib/ftpquota	2017-09-06 11:37:20.000000000 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env perl
++#!/usr/bin/perl
+ # -------------------------------------------------------------------------
+ # Copyright (C) 2000-2017 TJ Saunders <tj@castaglia.org>
+ #
+--- ./contrib/xferstats.holger-preiss.orig	2017-09-06 11:37:06.000000000 -0400
++++ ./contrib/xferstats.holger-preiss	2017-09-06 11:37:20.000000000 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env perl
++#!/usr/bin/perl
+ # ---------------------------------------------------------------------------
+ #
+ # USAGE: xferstats <options>
+--- ./src/prxs.in.orig	2017-09-06 11:37:06.000000000 -0400
++++ ./src/prxs.in	2017-09-06 11:37:20.000000000 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env perl
++#!/usr/bin/perl
+ 
+ # ---------------------------------------------------------------------------
+ # Copyright (C) 2008-2012 TJ Saunders <tj@castaglia.org>
