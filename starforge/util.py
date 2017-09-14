@@ -6,6 +6,7 @@ from __future__ import absolute_import
 import os
 import tarfile
 import zipfile
+import lzma
 from os.path import join, abspath, expanduser
 from subprocess import Popen, CalledProcessError, PIPE
 try:
@@ -82,6 +83,10 @@ class Archive(object):
         elif zipfile.is_zipfile(arcfile):
             self.arctype = 'zip'
             self.arc = zipfile.ZipFile(arcfile)
+        elif arcfile.endswith('.tar.xz'):
+            self.arctype = 'tar'
+            lzma_f = lzma.open("file.tar.xz")
+            self.arc = tarfile.open(fileobj=lzma_f)
         else:
             raise Exception('Unknown archive type: %s' % arcfile)
 
