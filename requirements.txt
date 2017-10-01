@@ -4,6 +4,5 @@ filecache
 click
 requests
 six
-pylzma
 -i https://wheels.galaxyproject.org/simple/
 wheel==0.26.0+gx1
