@@ -46,7 +46,7 @@ apt-get source $pkg &&
 distrib_version=$(grep Version: *.dsc| cut -d' ' -f2-| head -n1) &&
 nginx_version=$(ls *.orig.tar.gz|sed 's/\.orig\.tar\.gz//'|sed 's/nginx_//g') &&
 ppa_version=${distrib_version}ppa1 &&
-git clone -b 2.2 --single-branch https://github.com/vkholodkov/nginx-upload-module.git/ \
+git clone -b 2.255 --single-branch https://github.com/fdintino/nginx-upload-module.git/ \
     nginx-${nginx_version}/debian/modules/nginx-upload &&
 upload_module_shortrev=$(git --git-dir=nginx-${nginx_version}/debian/modules/nginx-upload/.git rev-parse --short HEAD) &&
 rm -rf nginx/debian/modules/nginx-upload/.git &&
